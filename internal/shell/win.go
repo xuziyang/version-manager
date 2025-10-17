@@ -179,8 +179,7 @@ func (s *Shell) SetEnv(key, value string) {
 	if key == PathEnvName {
 		return
 	}
-	// err := s.Key.SetStringValue(key, value)
-	err := s.Key.SetExpandStringValue(key, value)
+	err := s.Key.SetStringValue(key, value)
 	if err != nil {
 		gprint.PrintError("Set env '%s=%s' failed: %+v", key, value, err)
 		return
