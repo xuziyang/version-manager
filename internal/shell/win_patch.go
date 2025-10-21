@@ -121,7 +121,7 @@ func AddExportLine(oldContent string, exportLine string) (newContent string) {
 cd hook for Mingw bash shell.
 */
 const VmrMingwBashCdHook = `# cd hook start
-export PATH=%s:"${PATH}"
+export PATH="${PATH}:%s"
 
 if [ -z "$(alias|grep cdhook)" ]; then
 	cdhook() {
